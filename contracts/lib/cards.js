@@ -51,7 +51,9 @@ async function findPools(ethers, provider) {
       const [slot0, liquidity] = await Promise.all([p.slot0(), p.liquidity()]);
       found.push({ pool, fee, cardinality: Number(slot0[3]), liquidity });
     }
-    found.sort((a, b) => b.cardinality - a.cardinality || (b.liquidity > a.liquidity ? 1 : -1));
+    // Most liquid pool among those that keep enough history: the hardest to push and the most traded.
+    const min = config.odds.minObservations;
+    found.sort((a, b) => Number(b.cardinality >= min) - Number(a.cardinality >= min) || (b.liquidity > a.liquidity ? 1 : b.liquidity < a.liquidity ? -1 : 0));
     out[sym] = { token, best: found[0] || null, all: found };
   }
   return out;

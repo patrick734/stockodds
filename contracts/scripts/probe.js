@@ -29,7 +29,11 @@ async function main() {
     const [a, b] = config.odds.weekdayHours;
     return how >= a && how <= b ? "weekday" : "weekend";
   };
-  console.log(`Pools: ${Object.entries(found).map(([s, f]) => `${s} ${f.best ? f.best.pool : "none"}`).join(", ")}\n`);
+  for (const [s, f] of Object.entries(found)) {
+    const others = (f.all || []).map((p) => `${p.fee / 10000}%: ${p.cardinality} obs, liquidity ${p.liquidity}`).join("; ");
+    console.log(`${s.padEnd(6)} ${f.best ? f.best.pool : "none"}${others ? `  [${others}]` : ""}`);
+  }
+  console.log("");
   const lastEnded = Math.floor(now / P) - 1; // the most recent hour that has fully ended
   for (let n = lastEnded; n > lastEnded - 4; n--) {
     const start = n * P;

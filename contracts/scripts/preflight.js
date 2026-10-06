@@ -65,7 +65,7 @@ async function main() {
   console.log(`TWAP pools (each needs ${config.odds.minObservations} observations)`);
   const found = await cards.findPools(ethers, provider);
   for (const [sym, f] of Object.entries(found)) {
-    const list = f.all.map((p) => `${p.fee / 10000}%: ${p.cardinality}`).join(", ") || "no USDG pool";
+    const list = f.all.map((p) => `${p.fee / 10000}%: ${p.cardinality} obs, liquidity ${p.liquidity}`).join("; ") || "no USDG pool";
     if (f.best && f.best.cardinality >= config.odds.minObservations) ok(`${sym}: ${f.best.pool} (${f.best.fee / 10000}% fee, ${f.best.cardinality} observations) [${list}]`);
     else fail(`${sym}: no USDG pool deep enough [${list}]`);
   }
