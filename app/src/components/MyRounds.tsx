@@ -65,7 +65,7 @@ export function MyRounds() {
                   <td>{hourLabel(x.n)}</td>
                   <td className="num">{fmt(x.stake)}</td>
                   <td className={`num ${diff === null ? "" : diff >= 0n ? "good" : "bad"}`}>
-                    {diff === null ? "…" : `${diff >= 0n ? "+" : "−"}${fmt(diff >= 0n ? diff : -diff)}`}
+                    {diff === null ? (x.claimed ? "—" : "…") : `${diff >= 0n ? "+" : "−"}${fmt(diff >= 0n ? diff : -diff)}`}
                   </td>
                   <td>{x.status}</td>
                 </tr>
