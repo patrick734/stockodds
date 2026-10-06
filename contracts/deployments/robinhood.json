@@ -1,0 +1,39 @@
+{
+  "network": "robinhood",
+  "chainId": 4663,
+  "deployer": "0x6065793a5e987600B5339957e96C98343a681C5e",
+  "roles": {
+    "admin": "0x7C06c925E1146D75A8e06Bbfc7f9090D96710EbD",
+    "guardian": "0x7E100F5a3Db16f4483245390f61C0Eb4d3753677",
+    "keeper": "0x27Ec46FCa0124C20Aef8d605BB608a0812E54E90"
+  },
+  "startBlock": 81917285,
+  "usdg": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+  "v3Factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+  "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+  "ponsHook": "0xE5e702641Ea86F4ae6cC3cDaeD2B886f976Be044",
+  "assets": {
+    "ETH": {
+      "token": "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
+      "pool": "0x52e65B17fB6E5BA00Ed806f37Afcd2DaA50271Ca",
+      "fee": 100,
+      "observations": 10809
+    },
+    "NVDA": {
+      "token": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "pool": "0xd4EB21209C4D6093f80B5b84f5C45cc093EA14a3",
+      "fee": 500,
+      "observations": 7200
+    },
+    "GOOGL": {
+      "token": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+      "pool": "0x34D0dC122CF9A8Eb296fC5e0D3A233625D7d19b7",
+      "fee": 500,
+      "observations": 7200
+    }
+  },
+  "timelock": "0x708219868DD9bDf7b5fcD4b6100470B7C967cf7d",
+  "burn": "0x3be3F0492E0DEAFB4FB43DE3F7b38370a25bEc79",
+  "rounds": "0xA7d61eB828198b8bfa68fe331B39453898b829a2",
+  "oddsToken": null
+}
