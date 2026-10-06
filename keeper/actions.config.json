@@ -1,0 +1,6 @@
+{
+  "settleLookbackRounds": 6,
+  "minFlushEth": "0.001",
+  "minBurnEth": "0.002",
+  "slippageBps": 500
+}

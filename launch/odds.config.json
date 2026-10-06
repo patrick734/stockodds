@@ -1,0 +1,22 @@
+{
+  "name": "StockOdds",
+  "symbol": "ODDS",
+  "logo": "",
+  "description": "StockOdds: hourly forecast rounds on tokenized stocks and ETH on Robinhood Chain. Say your odds, stake ETH, get paid for calibration. The 5% fee on winners' profit buys and burns $ODDS.",
+  "socials": {
+    "twitter": "",
+    "telegram": "",
+    "discord": "",
+    "website": "https://stockodds.fun",
+    "farcaster": ""
+  },
+  "launchConfigId": 0,
+  "pairToken": "0x0000000000000000000000000000000000000000",
+  "creatorFeeRecipient": "",
+  "creatorTaxBps": 0,
+  "buybackEnabled": true,
+  "salt": "",
+  "snipeTaxExemptions": [],
+  "devBuyEth": "0",
+  "devBuySlippageBps": 300
+}
