@@ -120,6 +120,9 @@ function required(name) {
 }
 
 async function liveEnv() {
+  // On a fork, reads at the forked block itself fail ("no known hardfork for execution on historical block"):
+  // mine one local block first so every read runs on a block the local node owns.
+  if (network.name === "hardhat") await network.provider.send("hardhat_mine", ["0x1"]);
   const found = await cards.findPools(ethers, ethers.provider);
   const assets = {};
   for (const [sym, f] of Object.entries(found)) {
